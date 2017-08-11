@@ -1,20 +1,29 @@
 $(function(event){
 
-
-
-$('h5').each(function(index,h5){
+var $box = $('.box')
+$box.each(function(y,box){
+		
+		$('h5').each(function(index,h5){
 		var boxValue = $(this).text();
-		userInput(boxValue,h5);
+		var eachbox = $box[index];
+		userInput(boxValue,h5,eachbox);
+
 		//console.log(h5);
+
+		})
 
 	})
 
 
-function userInput(bValue,h5){
+
+
+function userInput(bValue,h5,box){
 	$("#usr").keypress(function() {
         if (this.value == bValue) {
             console.log("correct!")
             $(h5).addClass('dissap');
+            $(box).addClass('dissap');
+            
         }
 
         
