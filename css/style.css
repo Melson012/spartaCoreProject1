@@ -1,0 +1,30 @@
+.main{
+	background-color: gray;
+	/*width: 500px;*/
+	height: 600px;
+	margin: auto;
+	/*margin-left: 10px;*/
+	border: 2px solid black;
+
+}
+.main1{
+	background-color: lightgrey;
+	/*width: 200px;*/
+	height: 600px;
+	margin: auto;
+	/*margin-left: 5px;*/
+	border: 2px solid black;
+}
+.title{
+	text-align: center;
+	margin-top: 20px;
+}
+.back{
+	background-color: black;
+	height: 550px;
+	border: 2px solid red;
+
+}
+.userInput{
+	border: 2px solid blue;
+}
