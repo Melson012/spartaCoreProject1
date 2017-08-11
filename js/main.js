@@ -1,3 +1,28 @@
+$(function(event){
+
+
+
+$('h5').each(function(index,h5){
+		var boxValue = $(this).text();
+		userInput(boxValue,h5);
+		//console.log(h5);
+
+	})
+
+
+function userInput(bValue,h5){
+	$("#usr").keypress(function() {
+        if (this.value == bValue) {
+            console.log("correct!")
+            $(h5).addClass('dissap');
+        }
+
+        
+})
+}
+
+
+
 //Component variables
 //Counter variable for score
 //Counter variable for lives
@@ -15,3 +40,4 @@
 //Function to update the components.
 
 //Function to clear the componet when correctly inputed
+})

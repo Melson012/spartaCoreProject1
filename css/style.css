@@ -7,6 +7,9 @@
 	border: 2px solid black;
 
 }
+.dissap{
+	display: none;
+}
 .main1{
 	background-color: lightgrey;
 	/*width: 200px;*/
@@ -27,4 +30,22 @@
 }
 .userInput{
 	border: 2px solid blue;
+}
+#b1{
+	background-color: white;
+	text-align: center;
+	height: 70px;
+	width: 100px;
+	margin-left: 20px;
+	margin-top: 30px;
+
+}
+#b2{
+	background-color: white;
+	text-align: center;
+	height: 70px;
+	width: 100px;
+	margin-right: 50px;
+	margin-top: 30px;
+	margin-left: 90px;
 }
