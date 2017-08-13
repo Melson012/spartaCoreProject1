@@ -4,15 +4,10 @@ var player1=0;
 var player2=0;
 var points=0;
 var turn=false;
-
-var $p1Turn = $('.player1')
-var $p2Turn = $('.player2')
-
+// var $p1Turn = $('.player1')
+// var $p2Turn = $('.player2')
 var $scoreplayer2 = $('#p2').text()
 var $scoreplayer1 = $('#p1').text()
-
-
-
 //Counter variable for lives
 //Component variables
 var $box = $('.box')
