@@ -114,6 +114,6 @@ function restartButton(h5,box){
 //Function to update the components.
 
 //Function to clear the componet when correctly inputed
-//setInterval(addDiv,2000);
+setInterval(addDiv,2000);
 userInput();
 })
