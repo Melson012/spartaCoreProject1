@@ -1,38 +1,40 @@
 $(function(event){
 //Counter variable for score
-var player1=0;
-var player2=0;
-var points=0;
-var counter = 0;
-var turn=false;
-var colors = ["Red","Yellow","Blue","Green","Pink","Purple"];
-var divColor = ["#FFE22E","#F29B00","#C6E00F","#F40200","#329BF3","#BEB7A4","#70163C"]
-var randomtext;
-var randomDivColor;
-var coloText = null;
+	var player1=0;
+	var player2=0;
+	var points=0;
+	var counter = 0;
+	var turn=false;
+	var colors = ["Red","Yellow","Blue","Green","Pink","Purple"];
+	var divColor = ["#FFE22E","#F29B00","#C6E00F","#F40200","#329BF3","#BEB7A4","#70163C"]
+	var randomtext;
+	var randomDivColor;
+	var coloText = null;
+
+
 
 function random(){
-	randomtext=Math.floor(Math.random()*6)
-	switch (randomtext){
-		case 0:coloText=(colors[randomtext]);
-			// console.log(coloText)
-	    	break;
-	    case 1:coloText=(colors[randomtext]);
-	    	// console.log(coloText)
-	    	break;
-	    case 2: coloText=(colors[randomtext]);
-	    	// console.log(coloText)
-	    	break;
-	    case 3:coloText=(colors[randomtext]);
-	    	// console.log(coloText)
-	    	break;
-	    case 4:coloText=(colors[randomtext]);
-	    	// console.log(coloText)
-	    	break;
-	    case 5: coloText=(colors[randomtext]);
-	    	// console.log(coloText)
-	    	break;
-	}
+		randomtext=Math.floor(Math.random()*6)
+		switch (randomtext){
+			case 0:coloText=(colors[randomtext]);
+				// console.log(coloText)
+		    	break;
+		    case 1:coloText=(colors[randomtext]);
+		    	// console.log(coloText)
+		    	break;
+		    case 2: coloText=(colors[randomtext]);
+		    	// console.log(coloText)
+		    	break;
+		    case 3:coloText=(colors[randomtext]);
+		    	// console.log(coloText)
+		    	break;
+		    case 4:coloText=(colors[randomtext]);
+		    	// console.log(coloText)
+		    	break;
+		    case 5: coloText=(colors[randomtext]);
+		    	// console.log(coloText)
+		    	break;
+		}
 }
 // ---------------------------------------------\\
 // Testing:
@@ -61,7 +63,7 @@ function addDiv(){
 function moveDown(){
 	for(var i=0; i<100; i++){
 					$('.box').animate({ 'marginTop': "+=2px"}, 'slow');
-				}
+	}
 }
 // ---------------------------------------------\\
 function userInput(){
@@ -76,7 +78,12 @@ function userInput(){
 		        $(box).detach();
 		        recordPoints(points+=1);
 						console.log("yes")
-						divColors()
+						if(points > 20){
+							divColors()
+						}else{
+							$('.box').css("background-color", "white")
+						}
+						
 						
 				}
 			})
@@ -128,7 +135,6 @@ function divColors(){
 	// }else { 
 	// 	$('.box').css("background-color", "white")
 	// }
-
 }
 // ---------------------------------------------\\
 

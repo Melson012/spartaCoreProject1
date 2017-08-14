@@ -6,7 +6,6 @@
 	/*margin-left: 10px;*/
 	border-radius: 15px;
 	position: absolute;
-
 }
 .body{
 	background-color: #CED0CE;
@@ -22,9 +21,6 @@
 	/*margin-left: 5px;*/
 	border-radius: 20px;
 	width: 200px;
-
-
-
 }
 .title{
 	text-align: center;
@@ -49,6 +45,7 @@
 
 
 }
+
 #b1{
 	background-color: white;
 	text-align: center;
@@ -58,8 +55,6 @@
 	margin-top: 30px;
 	border-radius: 20px;
 	border: 1px solid lightgray;
-	
-
 }
 #b2{
 	background-color: white;
