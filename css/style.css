@@ -1,35 +1,53 @@
 .main{
-	background-color: #F9C300;
+	background-color: #8E3B46;
 	/*width: 500px;*/
-	height: 600px;
+	height: 625px;
 	margin: auto;
 	/*margin-left: 10px;*/
-	border: 2px solid black;
+	border-radius: 15px;
+	position: absolute;
 
+}
+.body{
+	background-color: #CED0CE;
 }
 .dissap{
 	display: none;
 }
 .main1{
-	background-color: #F74E00;
+	background-color: #E0777D;
 	/*width: 200px;*/
 	height: 600px;
 	margin: auto;
 	/*margin-left: 5px;*/
-	border: 2px solid black;
+	border-radius: 20px;
+	width: 200px;
+
+
+
 }
 .title{
 	text-align: center;
 	margin-top: 20px;
 }
 .back{
-	background-color: lightgrey;
+	background-color: #FFFBFC;
 	height: 550px;
-	border: 2px solid red;
+	width: 95%;
+	border-radius: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	position: absolute;
+
 
 }
 .userInput{
-	border: 2px solid blue;
+	
+	position: absolute;
+	padding-top: 580px;
+
+
+
 }
 #b1{
 	background-color: white;
@@ -38,6 +56,9 @@
 	width: 100px;
 	margin-left: 20px;
 	margin-top: 30px;
+	border-radius: 20px;
+	border: 1px solid lightgray;
+	
 
 }
 #b2{
@@ -52,6 +73,7 @@
 #sideBar{
 	margin-top: 10px;
 	margin-bottom: 10px;
+	
 }
 .Turn{
 	border: 3px solid red;
@@ -63,5 +85,12 @@
 	width: 100px;
 	margin-left: 20px;
 	margin-top: 30px;
-
+	top: 50%;
+	left: 50%;
+	border-radius: 20px;
+	border: 1px solid lightgray;
+	position: relative;
+}
+.buttp2{
+	border-radius: 5px;
 }

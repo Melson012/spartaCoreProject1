@@ -3,9 +3,12 @@ $(function(event){
 var player1=0;
 var player2=0;
 var points=0;
+var counter = 0;
 var turn=false;
 var colors = ["Red","Yellow","Blue","Green","Pink","Purple"];
+var divColor = ["#FFE22E","#F29B00","#C6E00F","#F40200","#329BF3","#BEB7A4","#70163C"]
 var randomtext;
+var randomDivColor;
 var coloText = null;
 
 function random(){
@@ -31,12 +34,15 @@ function random(){
 	    	break;
 	}
 }
-
-// var $buttAdd = $('.add');
-// 		$buttAdd.click(function(event){
-// 			addDiv();
-// 			})
-	
+// ---------------------------------------------\\
+// Testing:
+var $buttAdd = $('.add');
+		$buttAdd.click(function(event){
+			var rand = Math.floor(Math.random()*divColor.length); 
+			$('.box').css("background-color", divColor[rand])
+			
+			})
+// ---------------------------------------------\\
 function addDiv(){
 	var $div = $('<div class="box"></div>');
 	random();
@@ -44,10 +50,19 @@ function addDiv(){
 	$div.appendTo(".mad");
 	$div.addClass('b1');
 	$div.addClass('box');
+	player2Play();
+	restartButton();
+	moveDown();
 }
 //Counter variable for lives
 //Component variables
 // ---------------------------------------------\\
+// Animate
+function moveDown(){
+	for(var i=0; i<100; i++){
+					$('.box').animate({ 'marginTop': "+=2px"}, 'slow');
+				}
+}
 // ---------------------------------------------\\
 function userInput(){
 	console.log('userInput')
@@ -57,11 +72,12 @@ function userInput(){
 			var userInput = this.value;
 			var $box = $('.box')
 			$box.each(function(index,box){
-				//console.log($(box).html()==="Yellow" || $(box).html()==="Pink" || $(box).html()==="Green")
 				if ($(box).html()===userInput){
 		        $(box).detach();
 		        recordPoints(points+=1);
 						console.log("yes")
+						divColors()
+						
 				}
 			})
 	  }
@@ -77,29 +93,48 @@ function recordPoints(points){
 	}
 }
 // ---------------------------------------------\\
-// Player 2 Turn
-function player2Play(h5,box){
+// Switch Player 2 Turn
+function player2Play(){
 	var $buttonPlay = $('button')
 		$buttonPlay.click(function(){
-			turn = true;
+			counter ++;
+
+			if (counter % 2 ===0){
+					turn = true;
+			}else {
+					turn = false;
+			}
 			points = 0;
-			$(h5).removeClass('dissap');
-	        $(box).removeClass('dissap');
+			console.log("play 2")
 		})
 }
 // ---------------------------------------------\\
 // Restart
-function restartButton(h5,box){
+function restartButton(){
 	$('.restart').click(function(event) {
 			turn = false;
 			points = 0;
 			$('#p1').html(points)
 			$('#p2').html(points)
-			$(h5).removeClass('dissap');
-	        $(box).removeClass('dissap');
+	    
 	})
 }
 // ---------------------------------------------\\
+function divColors(){
+	var rand = Math.floor(Math.random()*divColor.length); 
+	$('.box').css("background-color", divColor[rand])
+	// if(points > 20){
+	// 	$(box).css("background-color", divColor[rand])
+	// }else { 
+	// 	$('.box').css("background-color", "white")
+	// }
+
+}
+// ---------------------------------------------\\
+
+	
+// ---------------------------------------------\\
+
 // Identify whos turn
 
 // ---------------------------------------------\\
@@ -114,6 +149,7 @@ function restartButton(h5,box){
 //Function to update the components.
 
 //Function to clear the componet when correctly inputed
-setInterval(addDiv,2000);
+//setInterval(addDiv,2000);
 userInput();
+//divColors();
 })
