@@ -25,6 +25,12 @@ $(function(event){
 // 				console.log(top,left,bottom);
 // 			})
 // ---------------------------------------------\\
+function start(){
+	setInterval(addDiv,1000);
+	userInput();
+	setInterval(hitBottom,100);
+}
+// ---------------------------------------------\\
 function addDiv(){
 	divPos = Math.floor(Math.random()*divPosition.length);
 	randomtext=Math.floor(Math.random()*colors.length);
@@ -150,7 +156,7 @@ function hitBottom(){
 		if (bottom < -5){
 		 	$(div1).css("background-color", "blue")
 		 	$(div1).detach();
-		 	lives++
+		 	gameOver(lives+=1);
 	 }
 	})
 }
@@ -166,16 +172,28 @@ function playerTurn(){
 	}
 }
 // ---------------------------------------------\\
-
-
-
+function gameOver(lives){
+	if (lives == 1) {
+		 		$('.heart3').addClass('h1')
+		 	}else if (lives == 2) {
+		 		$('.heart3').addClass('h1')
+		 		$('.heart2').addClass('h1')
+		 	}else if (lives == 3){
+		 		$('.heart3').addClass('h1')
+		 		$('.heart2').addClass('h1')
+		 		$('.heart1').addClass('h1')
+		 	}else if (lives == 4) {
+		 		$('.box').detach();
+		 		window.clearInterval();
+		 		$('.back').html("GAME OVER!\n Start Again")
+		 		start();
+		 	}
+}
 
 // ---------------------------------------------\\
 //Function to update the components.
 
 //Function to clear the componet when correctly inputed
-setInterval(addDiv,1000);
-userInput();
-setInterval(hitBottom,100);
+start();
 //divColors();
 })

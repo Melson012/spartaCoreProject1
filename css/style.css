@@ -112,7 +112,7 @@
     background-color: lawngreen;
     border: 2px solid white;
 }
-#h1{
+.h1{
 	filter: grayscale(100%);
 	
 }
