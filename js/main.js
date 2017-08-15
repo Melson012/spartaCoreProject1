@@ -14,21 +14,27 @@ $(function(event){
 	var coloText = null;
 	var divpixel = null;
 
+
 // ---------------------------------------------\\
 // Testing:
 // var $buttAdd = $('.add');
 // 		$buttAdd.click(function(event){
-// 				var offsets = $('.back').offset();
-// 				var top = offsets.top;
-// 				var left = offsets.left;
-// 				var bottom = $('.back').height() - top;
-// 				console.log(top,left,bottom);
+// 				start();
 // 			})
 // ---------------------------------------------\\
+function intro(){
+	$('.body').click(function(event){
+		$('.intro').addClass('st')
+		start()
+		
+
+	})
+}
+// ---------------------------------------------\\
 function start(){
-	setInterval(addDiv,1000);
-	userInput();
+	setInterval(addDiv,3000);
 	setInterval(hitBottom,100);
+	userInput();
 }
 // ---------------------------------------------\\
 function addDiv(){
@@ -51,7 +57,7 @@ function addDiv(){
 // Animate
 function moveDown(div){
 	for(var i=0; i<100; i++){
-				$(div).animate({ 'marginTop': "+=25px"});
+				$(div).animate({ 'marginTop': "+=20px"});
 				
 	}
 }
@@ -88,9 +94,11 @@ function recordPoints(points){
 	if (!turn){
 		$('#p1').html(points)
 		playerTurn()
+		
 	} else{
 		$('#p2').html(points)
 		playerTurn()
+
 	}
 }
 // ---------------------------------------------\\
@@ -117,17 +125,19 @@ function player2Play(){
 // Restart
 function restartButton(){
 	$('.buttp2').click(function(event) {
-			points = 0;
-			$('#p1').html(points)
-			$('#p2').html(points)
-			if(turn){
-				turn = false;
-				playerTurn()
-				
-	    }else{
-	    	turn = true;
-	    	playerTurn()
-	    }
+		points = 0;
+		$('#p1').html(points)
+		$('#p2').html(points)
+		if(turn){
+			turn = false;
+			playerTurn()
+			
+			
+    }else{
+    	turn = true;
+    	playerTurn()
+    	
+    }
 
 
 	})
@@ -136,11 +146,6 @@ function restartButton(){
 function divColors(){
 	var rand = Math.floor(Math.random()*divColor.length); 
 	$('.box').css("background-color", divColor[rand])
-	// if(points > 20){
-	// 	$(box).css("background-color", divColor[rand])
-	// }else { 
-	// 	$('.box').css("background-color", "white")
-	// }
 }
 // ---------------------------------------------\\
 // Logic for when the componets hit the botttom of the screen.
@@ -185,8 +190,10 @@ function gameOver(lives){
 		 	}else if (lives == 4) {
 		 		$('.box').detach();
 		 		window.clearInterval();
-		 		$('.back').html("GAME OVER!\n Start Again")
-		 		start();
+		 		$('.back').html("GAME OVER!\nPlayer 1:");
+		 		location.reload();
+		 		
+		 		
 		 	}
 }
 
@@ -194,6 +201,6 @@ function gameOver(lives){
 //Function to update the components.
 
 //Function to clear the componet when correctly inputed
-start();
+intro();
 //divColors();
 })

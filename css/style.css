@@ -34,16 +34,11 @@
 	margin-top: 20px;
 	margin-bottom: 5px;
 	position: absolute;
-
-
 }
 .userInput{
-	
 	position: absolute;
 	padding-top: 580px;
-
 }
-
 #b1{
 	background-color: white;
 	text-align: center;
@@ -114,5 +109,7 @@
 }
 .h1{
 	filter: grayscale(100%);
-	
+}
+.st{
+	display: none;
 }
