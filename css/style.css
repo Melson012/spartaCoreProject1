@@ -42,8 +42,6 @@
 	position: absolute;
 	padding-top: 580px;
 
-
-
 }
 
 #b1{
@@ -80,11 +78,12 @@
 	width: 100px;
 	margin-left: 20px;
 	margin-top: 30px;
-	top: 50%;
-	left: 50%;
+	top: 10%;
+	left: 80%;
 	border-radius: 20px;
 	border: 1px solid lightgray;
-	position: relative;
+	/*position: relative;*/
+	position: absolute;
 }
 .buttp2{
 	border-radius: 5px;
