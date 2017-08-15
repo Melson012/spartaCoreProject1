@@ -3,6 +3,7 @@ $(function(event){
 	var player1=0;
 	var player2=0;
 	var points=0;
+	var lives = 0;
 	var counter = 0;
 	var turn=false;
 	var colors = ["RED","YELLOW","BLUE","GREEN","PINK","PURPLE","BROWN","BLACK","ORANGE","WHITE","GREY"];
@@ -13,44 +14,16 @@ $(function(event){
 	var coloText = null;
 	var divpixel = null;
 
-
-// function random(){
-// 		randomtext=Math.floor(Math.random()*colors.length)
-// 		switch (randomtext){
-// 			case 0:coloText=(colors[randomtext]);
-// 				// console.log(coloText)
-// 		    	break;
-// 		    case 1:coloText=(colors[randomtext]);
-// 		    	// console.log(coloText)
-// 		    	break;
-// 		    case 2: coloText=(colors[randomtext]);
-// 		    	// console.log(coloText)
-// 		    	break;
-// 		    case 3:coloText=(colors[randomtext]);
-// 		    	// console.log(coloText)
-// 		    	break;
-// 		    case 4:coloText=(colors[randomtext]);
-// 		    	// console.log(coloText)
-// 		    	break;
-// 		    case 5: coloText=(colors[randomtext]);
-// 		    	// console.log(coloText)
-// 		    	break;
-// 		}
-// }
 // ---------------------------------------------\\
 // Testing:
-
-
-
-
-var $buttAdd = $('.add');
-		$buttAdd.click(function(event){
-				var offsets = $('.back').offset();
-				var top = offsets.top;
-				var left = offsets.left;
-				var bottom = $('.back').height() - top;
-				console.log(top,left,bottom);
-			})
+// var $buttAdd = $('.add');
+// 		$buttAdd.click(function(event){
+// 				var offsets = $('.back').offset();
+// 				var top = offsets.top;
+// 				var left = offsets.left;
+// 				var bottom = $('.back').height() - top;
+// 				console.log(top,left,bottom);
+// 			})
 // ---------------------------------------------\\
 function addDiv(){
 	divPos = Math.floor(Math.random()*divPosition.length);
@@ -72,22 +45,13 @@ function addDiv(){
 // Animate
 function moveDown(div){
 	for(var i=0; i<100; i++){
-				$(div).animate({ 'marginTop': "+=10px"});
-				// var offsets = $(div).offset();
-				// var top = offsets.top;
-				// var left = offsets.left;
-				// var bottom = $('.back').height() - top ;
-				// console.log(bottom);
-				// if (bottom < 0){
-				// 	console.log("hit the bottom");
-
-				// 	$(div).css("background-color", "blue")
-				// 	$(div).detach();
-				// }
+				$(div).animate({ 'marginTop': "+=25px"});
+				
 	}
 }
 // ---------------------------------------------\\
 function userInput(){
+
 	console.log('userInput')
 	$("#usr").keypress(function(event){
 		var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -117,8 +81,10 @@ function userInput(){
 function recordPoints(points){
 	if (!turn){
 		$('#p1').html(points)
+		playerTurn()
 	} else{
 		$('#p2').html(points)
+		playerTurn()
 	}
 }
 // ---------------------------------------------\\
@@ -130,8 +96,12 @@ function player2Play(){
 
 			if (counter % 2 ===0){
 					turn = true;
+					playerTurn()
+					console.log(turn)
 			}else {
 					turn = false;
+					playerTurn()
+					console.log(turn)
 			}
 			points = 0;
 			
@@ -140,12 +110,20 @@ function player2Play(){
 // ---------------------------------------------\\
 // Restart
 function restartButton(){
-	$('.restart').click(function(event) {
-			turn = false;
+	$('.buttp2').click(function(event) {
 			points = 0;
 			$('#p1').html(points)
 			$('#p2').html(points)
-	    
+			if(turn){
+				turn = false;
+				playerTurn()
+				
+	    }else{
+	    	turn = true;
+	    	playerTurn()
+	    }
+
+
 	})
 }
 // ---------------------------------------------\\
@@ -169,32 +147,26 @@ function hitBottom(){
 		var left = offsets.left;
 		var bottom = $('.back').height() - top ;
 		console.log(bottom);
-
 		if (bottom < -5){
-
-	 	$(div1).css("background-color", "blue")
-	 	$(div1).detach();
-		
+		 	$(div1).css("background-color", "blue")
+		 	$(div1).detach();
+		 	lives++
 	 }
-
 	})
-	// if (bottom < 0){
-
-	// 	console.log("hit the bottom");
-
-	// 	$(div).css("background-color", "blue")
-	// 	// $(div).detach();
-	// }
-
+}
+// ---------------------------------------------\\
+// Identify whos turn
+function playerTurn(){
+	if (!turn){
+		$('#p1S').addClass('Turn')
+		$('#p2S').removeClass('Turn')
+	} else{
+		$('#p2S').addClass('Turn')
+		$('#p1S').removeClass('Turn')
+	}
 }
 // ---------------------------------------------\\
 
-// Identify whos turn
-
-// ---------------------------------------------\\
-//Constructor to create the components 
-
-// ---------------------------------------------\\
 
 
 
