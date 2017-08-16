@@ -1,35 +1,43 @@
 .main{
-	background-color: gray;
+	background-color: #8E3B46;
 	/*width: 500px;*/
-	height: 600px;
+	height: 625px;
 	margin: auto;
 	/*margin-left: 10px;*/
-	border: 2px solid black;
-
+	border-radius: 15px;
+	position: absolute;
+}
+.body{
+	background-color: #CED0CE;
 }
 .dissap{
 	display: none;
 }
 .main1{
-	background-color: lightgrey;
+	background-color: #E0777D;
 	/*width: 200px;*/
 	height: 600px;
 	margin: auto;
 	/*margin-left: 5px;*/
-	border: 2px solid black;
+	border-radius: 20px;
+	width: 200px;
 }
 .title{
 	text-align: center;
 	margin-top: 20px;
 }
 .back{
-	background-color: black;
+	background-color: #FFFBFC;
 	height: 550px;
-	border: 2px solid red;
-
+	width: 95%;
+	border-radius: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	position: absolute;
 }
 .userInput{
-	border: 2px solid blue;
+	position: absolute;
+	padding-top: 580px;
 }
 #b1{
 	background-color: white;
@@ -38,7 +46,8 @@
 	width: 100px;
 	margin-left: 20px;
 	margin-top: 30px;
-
+	border-radius: 20px;
+	border: 1px solid lightgray;
 }
 #b2{
 	background-color: white;
@@ -52,7 +61,55 @@
 #sideBar{
 	margin-top: 10px;
 	margin-bottom: 10px;
+	
 }
-.myTurn{
-	border: 1px solid lightblue;
+.Turn{
+	color: white;
+}
+.b1{
+	background-color: white;
+	text-align: center;
+	height: 70px;
+	width: 100px;
+	margin-left: 20px;
+	margin-top: 30px;
+	top: 10%;
+	left: 80%;
+	border-radius: 20px;
+	border: 1px solid lightgray;
+	/*position: relative;*/
+	position: absolute;
+}
+.buttp2{
+	border-radius: 5px;
+}
+.heart1{
+	margin-bottom: 5px;
+	width: 50px;
+	height: 50px;
+}
+.heart2{
+	margin-bottom: 5px;
+	width: 50px;
+	height: 50px;
+}
+.heart3{
+	margin-bottom: 5px;
+	width: 50px;
+	height: 50px;
+}
+.lives{
+	margin-top: 10px;
+}
+.restart1{
+	margin-bottom: 30px;
+	border-radius: 20px;
+    background-color: lawngreen;
+    border: 2px solid white;
+}
+.h1{
+	filter: grayscale(100%);
+}
+.st{
+	display: none;
 }
