@@ -9,6 +9,8 @@
 }
 .body{
 	background-color: #CED0CE;
+	font-family: Wendy; font-size: 25px; font-weight: normal; letter-spacing: 0px;
+
 }
 .dissap{
 	display: none;
@@ -25,6 +27,12 @@
 .title{
 	text-align: center;
 	margin-top: 20px;
+}
+.into{
+	font-size: 20px;
+}
+.underline{
+	text-decoration: underline;
 }
 .back{
 	background-color: #FFFBFC;
@@ -105,7 +113,11 @@
 	margin-bottom: 30px;
 	border-radius: 20px;
     background-color: lawngreen;
-    border: 2px solid white;
+    border: 2px solid black;
+}
+.instruct{
+	border: 2px solid green;
+	width: 100px
 }
 .h1{
 	filter: grayscale(100%);
@@ -113,3 +125,37 @@
 .st{
 	display: none;
 }
+.instr{
+	margin: 5px;
+}
+.intro{
+	padding-top: 10px;
+	border: 2px solid grey;
+}
+.gameName{
+	padding-top: 15px;
+}
+.welcome{
+	text-align: center;
+}
+.score{
+ 	border: 2px solid grey;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
