@@ -66,6 +66,7 @@ $(function(event){
 
 		$('#usr').click(function(event){
 			$('.intro').addClass('st')
+
 			start()
 
 		})
@@ -78,6 +79,10 @@ $(function(event){
 		userInput();
 		// restartButton();
 		$("#usr").focus();
+	 	$("#div1").fadeIn("fast");
+    $("#div1").fadeOut(1500);
+    $("#div2").fadeIn(2000);
+    $("#div2").fadeOut(2000);
 
 		
 	}
