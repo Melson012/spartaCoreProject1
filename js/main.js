@@ -276,24 +276,58 @@ $(function(event){
 	 		$('.heart3').addClass('h1')
 	 		$('.heart2').addClass('h1')
 	 	} else if (lives == 3){
-	 		
+
 	 		$('#usr').hide()
 	 		$('.heart3').addClass('h1')
 	 		$('.heart2').addClass('h1')
 	 		$('.heart1').addClass('h1')
-	 	} else if (lives == 4) {
 	 		$('.box').detach();
-	 		restartButton();
-	 		$('.intro').removeClass('st')
+	 		//restartButton();
+	 		//$('.intro').removeClass('st')
 	 		for (var i = 0; i < 6000; i++){
         window.clearInterval(i);
 	 		}
-	 		
+	 		if (points < parseInt(localStorage.getItem("score"))){
+	 			lost()
+	 			
+	 		}
+
+	 		if (points >= parseInt(localStorage.getItem("score"))){
+	 			won()
+	 		}
+
 	 		store()
 	 		$('#playerName').focus()
-	 		location.reload();
-
-	 	}
+	 		
+	 	} 
+	}
+	// ---------------------------------------------\\
+	function lost(){
+		var $userLost = $('#div4')
+		$userLost.html("Oh No   "+userNAme+": "+points+"  You failed to beat the HIGHSCORE!")
+		$("#div4").fadeIn("slow");
+    $("#div4").fadeOut(4500);
+    setTimeout(function(){
+    	$('.intro').removeClass('st')
+    	restartButton();
+    	location.reload();
+    	
+    },5500)
+   
+	}
+	function won(){
+	var $userLost = $('#div3')
+		$userLost.html("Well Done "+userNAme+": "+points+"you Beat the HIGHSCORE")
+		$("#div3").fadeIn("slow");
+    $("#div3").fadeOut(4500);
+    setTimeout(function(){
+    	$('.intro').removeClass('st')
+    	restartButton();
+    	location.reload();
+    	
+    },5500)	
+   
+    
 	}
 	// ---------------------------------------------\\
 	// Local Storage
