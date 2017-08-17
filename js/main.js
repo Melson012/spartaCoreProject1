@@ -17,8 +17,11 @@ $(function(event){
 	var userNAme = null;
 	var leaderBoard= [];
 	var localCounter = 0;
-
+	var $nice = $('<p>CAN YOU BEAT THIS HIGHSCORE?!</p>')
 	$('#playerName').focus()
+	$nice.css('color','red')
+  $nice.appendTo('.Hscore');
+	// $nice.hide()
 	//store()
 
 
@@ -39,7 +42,6 @@ $(function(event){
 // 				start();
 // 			})
 
-
 	var $pla1 = localStorage.getItem('player')
   var $lostr = $('<tr></tr>');
   $lostr.appendTo('#myTable')
@@ -51,41 +53,13 @@ $(function(event){
   var $scorePl = $('<td></td>')
   $scorePl.html($pla1score)
   $scorePl.appendTo($lostr)
-
-
-  var $newplayer =localStorage.getItem("player1");
-  var $lostr1 = $('<tr></tr>');
-  $lostr1.appendTo('#myTable')
-  var $valPl1 = $('<td></td>')
-  $valPl1.html($newplayer)
-  $valPl1.appendTo($lostr1)
-
-	var $newscore = localStorage.getItem("score2");
-  var $scorePl1 = $('<td></td>')
-  $scorePl1.html($newscore)
-  $scorePl1.appendTo($lostr1)
-
-
-  var $newplayer3 =localStorage.getItem("player3");
-  var $lostr2 = $('<tr></tr>');
-  $lostr2.appendTo('#myTable')
-  var $valPl2 = $('<td></td>')
-  $valPl2.html($newplayer3)
-  $valPl2.appendTo($lostr2)
-
-	var $newscore3 = localStorage.getItem("score3");
-  var $scorePl2 = $('<td></td>')
-  $scorePl2.html($newscore3)
-  $scorePl2.appendTo($lostr2)
-
   
   
 
-	
-	// var $buttonPlay = $('.buttp2')
-	// 	$buttonPlay.click(function(){
-	// 		player2Play();
-	// 	})
+
+
+
+ 
 	// ---------------------------------------------\\
 	//Introduction/instruction
 	function intro(){
@@ -157,14 +131,21 @@ $(function(event){
 
 						}
 						// imlement level 3 rainbow
-						if(points > 20){
+						if(points >= 20){
 							divColors();
 							$('#p2').html("2")
 							
-						} else {
-							$('.box').css("background-color", "white")
 						}	
+						if(points >= 30){
+							setInterval(divColors,500);
+							$('#p2').html("3")
+							$('#p2').css('color','red')
+						}else {
+							$('.box').css("background-color", "white")
+						}
 
+					}else{
+						$('#usr').val('');
 					}
 
 				})
@@ -278,18 +259,10 @@ $(function(event){
 	 		for (var i = 0; i < 6000; i++){
         window.clearInterval(i);
 	 		}
+	 		store()
 	 		$('#playerName').focus()
 	 		location.reload();
-	 		
-	 		
-	 		
-	 		//$('.back').html("GAME OVER!Player 1:");
-	 		//$('.back').html(userNAme+": "+points);
-	 	// 	$('.body').click(function(event){
-				
-			// 		console.log("hello");
-			// 	//location.reload();
-			// })
+
 	 	}
 	}
 	// ---------------------------------------------\\
@@ -301,15 +274,12 @@ $(function(event){
     		// Store
 		    localStorage.setItem("player", userNAme);
 		    localStorage.setItem("score", points);
-		    
-		 }else if (points < localStorage.getItem("score")) {
-		    localStorage.setItem("player1", userNAme);
-		    localStorage.setItem("score2", points);
+		   	
 
-		}
-		else if (localStorage.getItem("score2") > localStorage.getItem("score")) {
-		    localStorage.setItem("player3", userNAme);
-		    localStorage.setItem("score3", points);
+		    
+		 }else {
+		 		$nice.remove();
+		    console.log("boom")
 
 		}
 	}

@@ -116,8 +116,10 @@
     border: 2px solid black;
 }
 .instruct{
-	border: 2px solid green;
-	width: 100px
+	border: 2px solid white;
+	border-radius: 10px;
+	width: 100px;
+	background-color: lightgray;
 }
 .h1{
 	filter: grayscale(100%);
@@ -130,7 +132,7 @@
 }
 .intro{
 	padding-top: 10px;
-	border: 2px solid grey;
+	/*border: 2px solid grey;*/
 }
 .gameName{
 	padding-top: 15px;
@@ -141,9 +143,11 @@
 .score{
  	border: 2px solid grey;
 }
-
+label{
+	margin-top: 15px;
+}
 table {
-    font-family: arial, sans-serif;
+    /*font-family: arial, sans-serif;*/
     border-collapse: collapse;
     
 }
@@ -152,7 +156,8 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    font-size: 16px;
+    font-size: 26px;
+    width: 100%;
 }
 
 tr:nth-child(even) {
