@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Melson";
+    src: url(../slkscre.ttf) format("truetype");
+}
+
 .mad {
 	height:550px;
 	padding-right: 0px;
@@ -14,7 +19,7 @@
 }
 .body{
 	background-color: #CED0CE;
-	font-family: Wendy; font-size: 25px; font-weight: normal; letter-spacing: 0px;
+	font-family: 'Melson'; font-size: 20px; font-weight: normal; letter-spacing: 0px;
 
 }
 .dissap{
@@ -33,7 +38,7 @@
 	margin-top: 20px;
 }
 .into{
-	font-size: 20px;
+	font-size: 14px;
 }
 .underline{
 	text-decoration: underline;
@@ -170,7 +175,7 @@ td, th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-    font-size: 26px;
+    font-size: 14px;
     width: 100%;
 }
 
