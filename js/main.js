@@ -22,30 +22,9 @@ $(function(event){
 	$nice.css('color','red')
   $nice.appendTo('.Hscore');
   $('#usr').hide()
-	// $nice.hide()
-	//store()
-
-
-	// $("#playerName").keypress(function(event){
-	// 		var keycode = (event.keyCode ? event.keyCode : event.which);
-	// 		if(keycode == '13'){
-	// 			var playerName = (this.value);
-	// 			userNAme = playerName.toString()
-	// 			$('#p1S').html(userNAme)
-	// 			$('.intro').addClass('st')
-
-	// 			start()
-	// 			// localCounter+=1;
-
-	// 			store()
-	// 		}
-	// })
+	
 // ---------------------------------------------\\
-// Testing:
-// var $buttAdd = $('.add');
-// 		$buttAdd.click(function(event){
-// 				start();
-// 			})
+//Sending the local storage to highscore table
 
 	var $pla1 = localStorage.getItem('player')
   var $lostr = $('<tr></tr>');
@@ -59,12 +38,6 @@ $(function(event){
   $scorePl.html($pla1score)
   $scorePl.appendTo($lostr)
   
-  
-
-
-
-
- 
 	// ---------------------------------------------\\
 	//Introduction/instruction
 	function intro(){
@@ -79,28 +52,21 @@ $(function(event){
 				$('#usr').show()
 
 				start()
-				// localCounter+=1;
+				
 
 				store()
 			}
 		})
 
-
-
-		// $('#usr').click(function(event){
-		// 	$('.intro').addClass('st')
-
-		// 	start()
-
-		// })
 	}
 	// ---------------------------------------------\\
 	//Running the game
 	function start(){
+
 		setInterval(addDiv,3000);
 		setInterval(hitBottom,100);
 		userInput();
-		// restartButton();
+		
 		$("#usr").focus();
 	 	$("#div1").fadeIn("fast");
     $("#div1").fadeOut(1500);
@@ -122,7 +88,7 @@ $(function(event){
 		$div.addClass('box');
 		$div.css('left',divPosition[divPos])
 		moveDown($div);
-		console.log("DIV")
+		
 	}
 	// ---------------------------------------------\\
 	// Animate
@@ -136,7 +102,7 @@ $(function(event){
 	// ---------------------------------------------\\
 	//Function to clear the componet when correctly inputed
 	function userInput(){
-		console.log('userInput')
+		
 		$("#usr").keypress(function(event){
 			var keycode = (event.keyCode ? event.keyCode : event.which);
 			
@@ -150,7 +116,7 @@ $(function(event){
 		        recordPoints(points+=1);
 		        store()
 		        $('#usr').val('');
-						console.log("yes")
+						
 						
 						if(points == 10){
 							setInterval(addDiv,2000);
@@ -203,12 +169,10 @@ $(function(event){
 				turn = true;
 				playerTurn()
 				start()
-
-				console.log(turn)
+				
 		} else {
 				turn = false;
 				playerTurn()
-				console.log(turn)
 				start()
 		}
 
@@ -223,6 +187,7 @@ $(function(event){
 			$('#p1').html(points)
 			$('#p2').html(points)
 			$('.box').detach()
+
 			if(turn){
 				turn = false;
 				playerTurn()	
@@ -232,6 +197,7 @@ $(function(event){
 	// ---------------------------------------------\\
 	// Change block colors 
 	function divColors(){
+
 		var rand = Math.floor(Math.random()*divColor.length); 
 		$('.box').css("background-color", divColor[rand])
 	}
@@ -244,7 +210,7 @@ $(function(event){
 			var top = offsets.top;
 			var left = offsets.left;
 			var bottom = $('.back').height() - top ;
-			console.log(bottom);
+	
 			if (bottom < -5){
 			 	$(div1).css("background-color", "blue")
 			 	$(div1).detach();
@@ -282,8 +248,7 @@ $(function(event){
 	 		$('.heart2').addClass('h1')
 	 		$('.heart1').addClass('h1')
 	 		$('.box').detach();
-	 		//restartButton();
-	 		//$('.intro').removeClass('st')
+	 		
 	 		for (var i = 0; i < 6000; i++){
         window.clearInterval(i);
 	 		}
@@ -303,6 +268,7 @@ $(function(event){
 	}
 	// ---------------------------------------------\\
 	function lost(){
+
 		var $userLost = $('#div4')
 		$userLost.html("Oh No   "+userNAme+": "+points+"  You failed to beat the HIGHSCORE!")
 		$("#div4").fadeIn("slow");
@@ -316,8 +282,9 @@ $(function(event){
    
 	}
 	function won(){
+
 	var $userLost = $('#div3')
-		$userLost.html("Well Done "+userNAme+": "+points+"you Beat the HIGHSCORE")
+		$userLost.html("Well Done  "+userNAme+": "+points+"  you Beat the HIGHSCORE")
 		$("#div3").fadeIn("slow");
     $("#div3").fadeOut(4500);
     setTimeout(function(){
@@ -332,18 +299,14 @@ $(function(event){
 	// ---------------------------------------------\\
 	// Local Storage
 	function store(){
-		// var userN = localStorage.getItem("player");
 
 		if (points > localStorage.getItem("score")) {
     		// Store
 		    localStorage.setItem("player", userNAme);
-		    localStorage.setItem("score", points);
-		   	
-
+		    localStorage.setItem("score", points);		  
 		    
 		 }else {
 		 		$nice.remove();
-		    console.log("boom")
 
 		}
 	}

@@ -1,5 +1,4 @@
 .mad {
-	/*background-color: red;*/
 	height:550px;
 	padding-right: 0px;
 
@@ -7,12 +6,11 @@
 
 .main{
 	background-color: #8E3B46;
-	/*width: 500px;*/
 	height: 625px;
 	margin: auto;
-	/*margin-left: 10px;*/
 	border-radius: 15px;
 	position: absolute;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .body{
 	background-color: #CED0CE;
@@ -24,12 +22,11 @@
 }
 .main1{
 	background-color: #E0777D;
-	/*width: 200px;*/
 	height: 600px;
 	margin: auto;
-	/*margin-left: 5px;*/
 	border-radius: 20px;
 	width: 200px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .title{
 	text-align: center;
@@ -50,12 +47,14 @@
 	margin-bottom: 5px;
 	padding-right: 20px: 
 	position: absolute;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .userInput{
 	position: absolute;
 	width: 200px;
 	padding-top: 8px;
 	padding-right: 5px;
+
 
 }
 #b1{
@@ -96,7 +95,6 @@
 	left: 80%;
 	border-radius: 20px;
 	border: 1px solid lightgray;
-	/*position: relative;*/
 	position: absolute;
 }
 .buttp2{
@@ -132,6 +130,7 @@
 	border-radius: 10px;
 	width: 100px;
 	background-color: lightgray;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .h1{
 	filter: grayscale(100%);
@@ -143,8 +142,8 @@
 	margin: 5px;
 }
 .intro{
-	padding-top: 10px;
-	/*border: 2px solid grey;*/
+	padding-bottom: 10px;
+	
 }
 .gameName{
 	padding-top: 15px;
@@ -155,14 +154,16 @@
 .score{
  	border: 2px solid grey;
 }
+#playerName{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 label{
 	margin-top: 15px;
 }
 table {
-    /*font-family: arial, sans-serif;*/
-    border-collapse: collapse;
-    
+
+    border-collapse: collapse;   
 }
 
 td, th {
