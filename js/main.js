@@ -133,6 +133,11 @@ $(function(event){
 						if(points >= 30){
 							setInterval(divColors,500);
 							$('#p2').html("3")
+							$('#p2').css('color','yellow')
+						}
+						if(points >= 40){
+							setInterval(addDiv,5000);
+							$('#p2').html("4")
 							$('#p2').css('color','red')
 						}else {
 							$('.box').css("background-color", "white")
