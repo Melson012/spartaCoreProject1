@@ -1,3 +1,10 @@
+.mad {
+	/*background-color: red;*/
+	height:550px;
+	padding-right: 0px;
+
+}
+
 .main{
 	background-color: #8E3B46;
 	/*width: 500px;*/
@@ -37,15 +44,19 @@
 .back{
 	background-color: #FFFBFC;
 	height: 550px;
-	width: 95%;
-	border-radius: 15px;
+	width: 80%;
+	border-radius: 90px;
 	margin-top: 20px;
 	margin-bottom: 5px;
+	padding-right: 20px: 
 	position: absolute;
 }
 .userInput{
 	position: absolute;
-	padding-top: 580px;
+	width: 200px;
+	padding-top: 8px;
+	padding-right: 5px;
+
 }
 #b1{
 	background-color: white;
@@ -144,6 +155,7 @@
 .score{
  	border: 2px solid grey;
 }
+
 label{
 	margin-top: 15px;
 }

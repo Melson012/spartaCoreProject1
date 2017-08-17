@@ -19,63 +19,87 @@
 		</div>
 	</header>
 	<div class="container">
+
 		<div class="row">
-			<div class="col-sm-10 col-md-10 main">
-				<div class="back" id="canvas">
-					<div class="col-sm-10 col-sm-12 mad">
-						<!-- <div class="box" id="b1" >Red</div> -->
-						<center>
-							<div id="div1" style="width:200px;height:180px;display:none;margin-top:20px;font-size: 50px">READY</div><br>
-							<div id="div2" style="width:200px;height:180px;display:none;margin-top:20px;font-size: 50px">START TYPING</div>
-						</center>
-						<div class="intro">
-							<div class="col-sm-12 col-sm-12 ">
-								<p class="welcome"> Welcome</p>
+
+
+			<div class="col-sm-10 main">
+				<!-- <div class="back" id="canvas"> -->
+					<div class="container back" id="canvas">
+						<div class="row">
+							<div class="col-sm-12 mad">
+								<!-- <div class="box" id="b1" >Red</div> -->
+								<center>
+									<div id="div1" style="width:200px;height:180px;display:none;margin-top:20px;font-size: 50px">READY</div><br>
+									<div id="div2" style="width:200px;height:180px;display:none;margin-top:20px;font-size: 50px">START TYPING</div>
+
+
+								</center>
+								<div class="intro">
+									<div class="col-sm-12 ">
+										<p class="welcome"> Welcome</p>
+									</div>
+
+									<div class="container">
+										<div class="row">
+											<div class="col-sm-6 instruct">
+												
+													<p class="underline"> Instructions </p>
+													<p class="into">Aim of the game is to avoid the blocks hitting the bottom of your screen.</p>
+													<p class="into">To do this you will need to input the correct words matching the block.The Matching blocks to your input will destroy the block and avoid hitting the bottom.</p>
+													<p class="into">Enter Your Name and press enter to Start. GoodLuck!</p>
+											
+											</div>
+											<div class="col-sm-6">
+												<div class="Hscore"></div>
+												<table id="myTable">
+												  <tr>
+												    <th>Player Name</th>
+												    <th>Score</th>
+												  </tr>
+											
+												</table>
+												<p class="storage"><p>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12 ">
+										<div class="form-group">
+										    <label>Player Name</label>
+										    <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name">
+										</div>
+									</div>
+								</div>
+								<!-- <div class="box" id="b1" >Blue</div> -->
+
+
 							</div>
 
-							<div class="container">
-								<div class="row">
-									<div class="col-sm-12 col-md-6 instruct">
-										
-											<p class="underline"> Instructions </p>
-											<p class="into">Aim of the game is to avoid the blocks hitting the bottom of your screen.</p>
-											<p class="into">To do this you will need to input the correct words matching the block.The Matching blocks to your input will destroy the block and avoid hitting the bottom.</p>
-											<p class="into">To Start click on the input and GoodLuck!</p>
-									
-									</div>
-									<div class="col-sm-12 col-md-6">
-										<div class="Hscore"></div>
-										<table id="myTable">
-										  <tr>
-										    <th>Player Name</th>
-										    <th>Score</th>
-										  </tr>
-									
-										</table>
-										<p class="storage">
-										<p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-sm-12 ">
-								<div class="form-group">
-								    <label>Player Name</label>
-								    <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name">
-								</div>
+							<div class="col-sm-12 userInput">
+								<input type="text" class="form-control" id="usr" type="submit" placeholder="Type" >
 							</div>
 						</div>
-						<!-- <div class="box" id="b1" >Blue</div> -->
+
+
+
+
+
+
 					</div>
-				</div>
-				<div class="col-sm-12 col-md-12 userInput">
-					<input type="text" class="form-control" id="usr" type="submit" placeholder="click to Start" >
-				</div>
+				<!-- </div> -->
+
+
+
 			</div>
-			<div class="col-sm-12 col-md-2 main1">
+
+
+			<div class="col-sm-2 main1">
+
+
 				<div class="container">
 					<div class="row">
 
-						<div class="col-sm-12 col-md-12">
+						<div class="col-sm-12">
 							<div class="player-1" id="sideBar">
 								<div class="player1">
 									<h4 id="p1S">Player 1 Score:</h4>
@@ -85,7 +109,7 @@
 							</div>
 						</div>
 
-						<div class="col-sm-12 col-md-12">
+						<div class="col-sm-12">
 							<div class="player-2" id="sideBar">
 								<div class="player2 ">
 									<h4 id="p2S">Level:</h4>
@@ -95,8 +119,8 @@
 							</div>
 						</div>
 
-						<div class="col-sm-12 col-md-12">
-							<div class="col-sm-12 col-md-12">
+						<div class="col-sm-12">
+							<div class="col-sm-12">
 
 								<div class="restart" id="sideBar">
 									<div class="player2">
@@ -106,30 +130,19 @@
 								</div>
 
 							</div>
-							<div class="col-sm-12 col-md-12">
-									<!-- <button class="restart1" type="button"><h6>Switch player</h6></button> -->
-										<!-- <button  class="add" type="button">add</button> -->
-									</div>
-								</div>
-
-							</div>
-
-							<div class="col-sm-12 col-md-12 lives">
-
+							<div class="col-sm-12 lives">
 								<img class="heart1" src="images/pixel_heart.png">
 								<img class="heart2" src="images/pixel_heart.png">
 								<img class="heart3" src="images/pixel_heart.png">
-
 							</div>
-
 						</div>
-
-					</div>
+					</div>	
 				</div>
+
 			</div>
 		</div>
 	</div>
-
+	
 
 </body>
 </html>

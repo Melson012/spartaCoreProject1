@@ -21,20 +21,25 @@ $(function(event){
 	$('#playerName').focus()
 	$nice.css('color','red')
   $nice.appendTo('.Hscore');
+  $('#usr').hide()
 	// $nice.hide()
 	//store()
 
 
-	$("#playerName").keypress(function(event){
-			var keycode = (event.keyCode ? event.keyCode : event.which);
-			if(keycode == '13'){
-				var playerName = (this.value);
-				userNAme = playerName.toString()
-				$('#p1S').html(userNAme)
-				// localCounter+=1;
-				store()
-			}
-	})
+	// $("#playerName").keypress(function(event){
+	// 		var keycode = (event.keyCode ? event.keyCode : event.which);
+	// 		if(keycode == '13'){
+	// 			var playerName = (this.value);
+	// 			userNAme = playerName.toString()
+	// 			$('#p1S').html(userNAme)
+	// 			$('.intro').addClass('st')
+
+	// 			start()
+	// 			// localCounter+=1;
+
+	// 			store()
+	// 		}
+	// })
 // ---------------------------------------------\\
 // Testing:
 // var $buttAdd = $('.add');
@@ -64,12 +69,30 @@ $(function(event){
 	//Introduction/instruction
 	function intro(){
 
-		$('#usr').click(function(event){
-			$('.intro').addClass('st')
+		$("#playerName").keypress(function(event){
+			var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13'){
+				var playerName = (this.value);
+				userNAme = playerName.toString()
+				$('#p1S').html(userNAme)
+				$('.intro').addClass('st')
+				$('#usr').show()
 
-			start()
+				start()
+				// localCounter+=1;
 
+				store()
+			}
 		})
+
+
+
+		// $('#usr').click(function(event){
+		// 	$('.intro').addClass('st')
+
+		// 	start()
+
+		// })
 	}
 	// ---------------------------------------------\\
 	//Running the game
@@ -253,7 +276,8 @@ $(function(event){
 	 		$('.heart3').addClass('h1')
 	 		$('.heart2').addClass('h1')
 	 	} else if (lives == 3){
-
+	 		
+	 		$('#usr').hide()
 	 		$('.heart3').addClass('h1')
 	 		$('.heart2').addClass('h1')
 	 		$('.heart1').addClass('h1')
@@ -264,6 +288,7 @@ $(function(event){
 	 		for (var i = 0; i < 6000; i++){
         window.clearInterval(i);
 	 		}
+	 		
 	 		store()
 	 		$('#playerName').focus()
 	 		location.reload();
@@ -273,7 +298,7 @@ $(function(event){
 	// ---------------------------------------------\\
 	// Local Storage
 	function store(){
-		var userN = localStorage.getItem("player");
+		// var userN = localStorage.getItem("player");
 
 		if (points > localStorage.getItem("score")) {
     		// Store
@@ -291,5 +316,6 @@ $(function(event){
 	// ---------------------------------------------\\
 	//Run the program.
 	intro();
+	
 	$('.restart1').hide();
 })
